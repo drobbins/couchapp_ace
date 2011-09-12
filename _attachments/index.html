@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Design Ace!</title>
+    <link rel="stylesheet" href="style/main.css" type="text/css">
+    <link rel="stylesheet" href="style/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="style/blueprint/print.css" type="text/css" media="print">
+    <!--[if lt IE 8]>
+      <link rel="stylesheet" href="style/blueprint/ie.css" type="text/css" media="screen, projection">
+    <![endif]-->
+  </head>
+  <body class="container">
+      <div id="account" class="span-24"></div>
+
+      <div class="span-24"><h1>Design Ace!</h1></div>
+      <hr />
+      <div id="profile" class="span-24"></div>
+      <hr />
+      <div id="editor" class="span-16 colborder"></div>
+      <div id="sidebar" class="span-7 last">
+        <h3>Welcome to Design Ace</h3>
+        <p>Edit your design documents where they lay, pro-style!</p>
+      </div>
+    </div>
+  </body>
+  <script src="vendor/couchapp/loader.js"></script>
+  <script src="loader.js"></script>
+  <script src="/_utils/script/jquery.form.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    $.couch.app(function(app) {
+      $("#account").evently("account", app);
+      $("#profile").evently("profile", app);
+      $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
+    });
+  </script>
+</html>

@@ -4,7 +4,7 @@ function(data){
   data.couchapp.manifest.map(function(path){
     //Only return paths to files
     if(path.charAt(path.length-1) !== "/"){
-      path = path.slice(0,path.lastIndexOf("."));
+      path = path;
       files.push(path);
     }
   });

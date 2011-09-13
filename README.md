@@ -2,7 +2,7 @@
 
 Edit your CouchApps like an Ace!
 
-Very much under development, but check out the progress and get excited at [my Iris Couch](http://robbinsd.iriscouch.com/icd9lookup/_design/couchapp_ace/index.html).
+Very much under development, but check out the progress and get excited at [my Iris Couch](http://robbinsd.iriscouch.com/couchapp_ace/_design/couchapp_ace/index.html).
 
 ## What are CouchApps?
 

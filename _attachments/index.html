@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Design Ace!</title>
+    <title>Couchapp Ace!</title>
     <link rel="stylesheet" href="style/main.css" type="text/css">
     <link rel="stylesheet" href="style/blueprint/screen.css" type="text/css" media="screen, projection">
     <link rel="stylesheet" href="style/blueprint/print.css" type="text/css" media="print">
@@ -12,15 +12,15 @@
   <body class="container">
       <div id="account" class="span-24"></div>
 
-      <div class="span-24"><h1>Design Ace!</h1></div>
+      <div class="span-24"><h1>Couchapp Ace!</h1></div>
       <hr />
       <div id="profile" class="span-24"></div>
       <hr />
-      <div id="editor" class="span-16 colborder"></div>
-      <div id="sidebar" class="span-7 last">
-        <h3>Welcome to Design Ace</h3>
-        <p>Edit your design documents where they lay, pro-style!</p>
+      <div id="navigation" class="span-5 colborder">
+        <div id="ddoc_list"></div>
+        <div id="ddoc_nav"></div>
       </div>
+      <div id="editor" class="span-18 last" style="position: relative; height: 600px;"></div>
     </div>
   </body>
   <script src="vendor/couchapp/loader.js"></script>
@@ -31,6 +31,11 @@
       $("#account").evently("account", app);
       $("#profile").evently("profile", app);
       $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
+      $("#ddoc_list").evently("design_doc_list", app);
+      $("#ddoc_nav").evently("design_doc_navigation", app);
+      $("#editor").evently("editor", app);
+      $.evently.connect("#ddoc_list", "#ddoc_nav", ["load_design_doc"]);
+      $.evently.connect("#ddoc_nav", "#editor", ["edit_file"]);
     });
   </script>
 </html>

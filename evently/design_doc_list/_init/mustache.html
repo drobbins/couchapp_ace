@@ -1,0 +1,9 @@
+<p>Select a design doc to begin.</p>
+<div id="design_doc_list">
+  <select id="design_doc_selector">
+    <option value="none" selected="true">Design Docs</option>
+    {{#rows}}
+      <option value="{{name}}">{{name}}</option>
+    {{/rows}}
+  </select>
+</div>

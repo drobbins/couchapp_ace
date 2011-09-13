@@ -1,3 +1,5 @@
 .couchappignore
 .couchapprc
+.DS_Store
 *.swp
+.gitignore

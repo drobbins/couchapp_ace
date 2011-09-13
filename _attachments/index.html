@@ -20,7 +20,7 @@
         <div id="ddoc_list"></div>
         <div id="ddoc_nav"></div>
       </div>
-      <div id="editor" class="span-18 last" style="position: relative; height: 600px;"></div>
+      <div id="editor_container" class="span-18 last" ></div>
     </div>
   </body>
   <script src="vendor/couchapp/loader.js"></script>
@@ -33,9 +33,9 @@
       $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
       $("#ddoc_list").evently("design_doc_list", app);
       $("#ddoc_nav").evently("design_doc_navigation", app);
-      $("#editor").evently("editor", app);
+      $("#editor_container").evently("editor", app);
       $.evently.connect("#ddoc_list", "#ddoc_nav", ["load_design_doc"]);
-      $.evently.connect("#ddoc_nav", "#editor", ["edit_file"]);
+      $.evently.connect("#ddoc_nav", "#editor_container", ["edit_file"]);
     });
   </script>
 </html>
